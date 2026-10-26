@@ -8,9 +8,9 @@ ENV PORT=8080
 
 COPY requirements.txt .
 
-RUN PIP install --no-cache-dir -- upgrade pip \
-    && PIP install --no-cache-dir -r requirements.txt
-
+RUN python -m pip install --no-cache-dir --upgrade pip \
+    && python -m pip install --no-cache-dir -r requirements.txt
+    
 COPY . .
 
 EXPOSE 8080
